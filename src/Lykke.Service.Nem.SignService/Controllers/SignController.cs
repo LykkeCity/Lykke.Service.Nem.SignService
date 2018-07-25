@@ -39,6 +39,7 @@ namespace Lykke.Service.Nem.SignService.Controllers
             var tx = TransferTransaction.Create(
                 NetworkType.GetNetwork(_bcnSettings.Network),
                 Deadline.CreateMinutes(context.ExpiresInMinutes),
+                context.Fee,
                 Address.CreateFromEncoded(context.To),
                 new List<Mosaic> { Mosaic.CreateFromIdentifier(context.AssetId, context.Amount) },
                 EmptyMessage.Create()

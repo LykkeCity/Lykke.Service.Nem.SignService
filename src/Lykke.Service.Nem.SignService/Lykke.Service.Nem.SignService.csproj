@@ -30,6 +30,7 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lykke.Service.Nem.SignService.AzureRepositories\Lykke.Service.Nem.SignService.AzureRepositories.csproj" />
