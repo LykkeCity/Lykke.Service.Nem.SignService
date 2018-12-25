@@ -21,7 +21,7 @@ namespace Lykke.Service.Nem.SignService
     {
         private readonly LykkeSwaggerOptions _swaggerOptions = new LykkeSwaggerOptions
         {
-            ApiTitle = "NemSignService API",
+            ApiTitle = "Nem Sign Service",
             ApiVersion = "v1"
         };
 
@@ -34,8 +34,7 @@ namespace Lykke.Service.Nem.SignService
 
                 options.Logs = logs =>
                 {
-                    logs.AzureTableName = "NemSignServiceLog";
-                    logs.AzureTableConnectionStringResolver = settings => settings.NemSignService.Db.LogsConnString;
+                    logs.UseEmptyLogging();
                 };
 
                 options.Extend = (sc, settings) =>

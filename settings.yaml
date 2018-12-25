@@ -4,14 +4,8 @@ NemSignService:
             settings-key: LogsConnString
             types:
               - AzureTableStorage
-SlackNotifications:
-    AzureQueue:
-        ConnectionString:
-            settings-key: SlackNotificationsConnString
-            types:
-                - AzureTableStorage
-        QueueName:
-            settings-key: SlackQueueName
+    HotWalletAddress:
+        settings-key: Nem-HotWalletAddress
 MonitoringServiceClient:
     MonitoringServiceUrl:
         settings-key: MonitoringServiceUrl
