@@ -24,7 +24,7 @@
     <PackageReference Include="Lykke.Sdk" Version="5.7.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
-    <PackageReference Include="Lykke.Service.BlockchainApi.Sdk" Version="0.0.9" />
+    <PackageReference Include="Lykke.Service.BlockchainApi.Sdk" Version="0.0.22" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Lykke.Service.BlockchainApi.Contract, Version=13.2.1.0, Culture=neutral, PublicKeyToken=null" />

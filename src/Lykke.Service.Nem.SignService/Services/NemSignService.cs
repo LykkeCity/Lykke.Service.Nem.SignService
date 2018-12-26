@@ -8,6 +8,7 @@ using io.nem1.sdk.Model.Blockchain;
 using io.nem1.sdk.Model.Transactions;
 using Lykke.Service.BlockchainApi.Contract.Wallets;
 using Lykke.Service.BlockchainApi.Sdk;
+using Lykke.Service.BlockchainApi.Sdk.Models;
 
 namespace Lykke.Service.Nem.SignService.Services
 {
@@ -24,8 +25,8 @@ namespace Lykke.Service.Nem.SignService.Services
         {
             return Task.FromResult(new WalletResponse
             {
-                PublicAddress = $"{_hotWalletAddress.Plain}+{Guid.NewGuid()}",
-                PrivateKey = "DUMMY_PRIVATE_KEY"
+                PublicAddress = $"{_hotWalletAddress.Plain}${Guid.NewGuid()}",
+                PrivateKey = Constants.DUMMY_PRIVATE_KEY
             });
         }
 
@@ -41,7 +42,7 @@ namespace Lykke.Service.Nem.SignService.Services
             var signedTransaction = TransferTransaction.FromJson(transactionContext).SignWith(key);
             var result = (
                 signedTransaction.Hash,
-                signedTransaction.ToJson().ToBase64()
+                signedTransaction.ToJson()
             );
 
             return Task.FromResult(result);
