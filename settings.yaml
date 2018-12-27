@@ -1,0 +1,12 @@
+NemSignService:
+    Db:
+        LogsConnString:
+            settings-key: LogsConnString
+            types:
+              - AzureTableStorage
+    HotWalletAddress:
+        settings-key: Nem-HotWalletAddress
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+

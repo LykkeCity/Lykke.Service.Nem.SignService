@@ -1,58 +1,49 @@
 ﻿using System;
 using JetBrains.Annotations;
-using Lykke.Logs.Loggers.LykkeSlack;
 using Lykke.Sdk;
+using Lykke.Service.BlockchainApi.Sdk;
+using Lykke.Service.Nem.SignService.Services;
 using Lykke.Service.Nem.SignService.Settings;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.PlatformAbstractions;
-using Lykke.Service.Nem.SignService.Controllers;
 
 namespace Lykke.Service.Nem.SignService
 {
     [UsedImplicitly]
     public class Startup
     {
+        private readonly LykkeSwaggerOptions _swaggerOptions = new LykkeSwaggerOptions
+        {
+            ApiTitle = "Nem Sign Service",
+            ApiVersion = "v1"
+        };
+
         [UsedImplicitly]
         public IServiceProvider ConfigureServices(IServiceCollection services)
-        {                                   
+        {
             return services.BuildServiceProvider<AppSettings>(options =>
             {
-                options.SwaggerOptions = new LykkeSwaggerOptions { ApiTitle = "NemSignService" };
+                options.SwaggerOptions = _swaggerOptions;
+
                 options.Logs = logs =>
                 {
-                    logs.AzureTableName = "NemSignServiceLog";
-                    logs.AzureTableConnectionStringResolver = settings => settings.NemSignService.Db.LogsConnString;
-
-                    // TODO: You could add extended logging configuration here:
-                    /* 
-                    logs.Extended = extendedLogs =>
-                    {
-                        // For example, you could add additional slack channel like this:
-                        extendedLogs.AddAdditionalSlackChannel("Nem.SignService", channelOptions =>
-                        {
-                            channelOptions.MinLogLevel = LogLevel.Information;
-                        });
-                    };
-                    */
+                    logs.UseEmptyLogging();
                 };
 
-                // TODO: You could add extended Swagger configuration here:
-                /*
-                options.Swagger = swagger =>
+                options.Extend = (sc, settings) =>
                 {
-                    swagger.IgnoreObsoleteActions();
+                    sc.AddBlockchainSignService(_ => new NemSignService(settings.CurrentValue.NemSignService.HotWalletAddress));
                 };
-                */
             });
         }
 
         [UsedImplicitly]
         public void Configure(IApplicationBuilder app)
         {
-            app.UseLykkeConfiguration();
+            app.UseLykkeConfiguration(options =>
+            {
+                options.SwaggerOptions = _swaggerOptions;
+            });
         }
     }
 }
