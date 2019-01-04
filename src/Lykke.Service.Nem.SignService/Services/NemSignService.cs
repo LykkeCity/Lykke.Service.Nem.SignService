@@ -5,7 +5,6 @@ using io.nem1.sdk.Model.Accounts;
 using io.nem1.sdk.Model.Transactions;
 using Lykke.Service.BlockchainApi.Contract.Wallets;
 using Lykke.Service.BlockchainApi.Sdk;
-using Lykke.Service.BlockchainApi.Sdk.Models;
 
 namespace Lykke.Service.Nem.SignService.Services
 {
