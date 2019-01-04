@@ -29,6 +29,9 @@
   <ItemGroup>
     <Reference Include="Lykke.Service.BlockchainApi.Contract, Version=13.2.1.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <ItemGroup>
       <DocFile Include="$(OutputPath)$(AssemblyName).xml" />
