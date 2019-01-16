@@ -21,7 +21,7 @@ namespace Lykke.Service.Nem.SignService.Services
         {
             return Task.FromResult(new WalletResponse
             {
-                PublicAddress = $"{_hotWalletAddress.Plain}${Guid.NewGuid()}",
+                PublicAddress = $"{_hotWalletAddress.Plain}${Guid.NewGuid().ToString("N")}",
                 PrivateKey = Constants.DUMMY_PRIVATE_KEY
             });
         }
