@@ -1,0 +1,7 @@
+NemSignService:
+    HotWalletAddress:
+        settings-key: Nem-HotWalletAddress
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+
