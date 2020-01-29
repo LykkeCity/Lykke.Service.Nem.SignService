@@ -16,6 +16,7 @@ namespace Lykke.Service.Nem.SignService.Controllers
             return new
             {
                 acc.PrivateKey,
+                acc.PublicKey,
                 acc.Address
             };
         }

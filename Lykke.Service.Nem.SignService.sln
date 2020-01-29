@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Tests", "1. Tests", "{2DD6DC1C-B31F-4802-86FD-0E9DADC0EF23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Tools", "2. Tools", "{A08537AF-BA80-4B53-9C11-198C42E2DBEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountGenerator", "tools\AccountGenerator\AccountGenerator.csproj", "{3012BE6B-6253-4D9F-8E3C-31A0A8C59E28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,12 +35,17 @@ Global
 		{A61FFDEE-5725-4650-A788-6E55EE5EFD5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A61FFDEE-5725-4650-A788-6E55EE5EFD5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A61FFDEE-5725-4650-A788-6E55EE5EFD5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3012BE6B-6253-4D9F-8E3C-31A0A8C59E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3012BE6B-6253-4D9F-8E3C-31A0A8C59E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3012BE6B-6253-4D9F-8E3C-31A0A8C59E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3012BE6B-6253-4D9F-8E3C-31A0A8C59E28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A61FFDEE-5725-4650-A788-6E55EE5EFD5B} = {2DD6DC1C-B31F-4802-86FD-0E9DADC0EF23}
+		{3012BE6B-6253-4D9F-8E3C-31A0A8C59E28} = {A08537AF-BA80-4B53-9C11-198C42E2DBEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB6C0EF4-AA6A-444D-8603-3669F73A58BC}
